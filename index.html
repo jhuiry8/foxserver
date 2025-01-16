@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狐狸渡劫伺服器</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f8f9fa;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        header {
+            background: linear-gradient(90deg, #ff8c00, #ff3b3b);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.5);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        header img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background: linear-gradient(90deg, #ff8c00, #ff3b3b);
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s, background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ff3b3b, #ff8c00);
+            transform: scale(1.05);
+        }
+        .ip-container {
+            margin: 20px 0;
+            animation: fadeIn 1.8s ease-in;
+        }
+        .ip-box {
+            display: inline-block;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            user-select: all;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="狐狸渡劫伺服器商標">
+        <h1>狐狸渡劫 Minecraft 伺服器</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">伺服器介紹</a></li>
+                <li><a href="#rules">伺服器規則</a></li>
+                <li><a href="#tribulation">渡劫系統</a></li>
+                <li><a href="#leaderboard">排行榜</a></li>
+                <li><a href="#community">加入社群</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>伺服器介紹</h2>
+        <img src="about.jpg" alt="伺服器介紹圖">
+        <p>歡迎來到《狐狸渡劫》Minecraft 伺服器，這是一個獨特的修仙冒險世界！</p>
+    </section>
+    
+    <section id="server-info">
+        <h2>伺服器 IP</h2>
+        <div class="ip-container">
+            <span class="ip-box" id="server-ip">play.foxserver.com</span>
+            <button onclick="copyIP()">複製 IP</button>
+        </div>
+    </section>
+    
+    <section id="rules">
+        <h2>伺服器規則</h2>
+        <img src="rules.jpg" alt="伺服器規則圖">
+        <ul>
+            <li>禁止作弊與使用外掛</li>
+            <li>尊重其他玩家，不惡意攻擊</li>
+            <li>渡劫需遵循伺服器設定的挑戰模式</li>
+        </ul>
+    </section>
+    
+    <section id="tribulation">
+        <h2>渡劫系統</h2>
+        <img src="tribulation.jpg" alt="渡劫系統圖">
+        <p>挑戰雷劫，提升修為，成為最強妖仙！</p>
+        <button onclick="startTribulation()">開始渡劫</button>
+    </section>
+    
+    <section id="leaderboard">
+        <h2>玩家排行榜</h2>
+        <img src="leaderboard.jpg" alt="排行榜圖">
+        <p>即將推出...</p>
+    </section>
+    
+    <section id="community">
+        <h2>加入我們</h2>
+        <img src="community.jpg" alt="社群圖">
+        <button onclick="location.href='https://discord.com'">加入 Discord</button>
+        <button onclick="location.href='minecraft://play.example.com'">加入伺服器</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 狐狸渡劫伺服器</p>
+    </footer>
+    
+    <script>
+        function startTribulation() {
+            alert("雷劫降臨！準備挑戰！");
+        }
+        function copyIP() {
+            const ipText = document.getElementById("server-ip").innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+                alert("伺服器 IP 已複製！");
+            }).catch(err => {
+                console.error("複製失敗", err);
+            });
+        }
+    </script>
+</body>
+</html>
